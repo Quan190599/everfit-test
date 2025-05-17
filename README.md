@@ -91,7 +91,6 @@ Content-Type: application/json
 ```http
 POST /api/metrics
 Content-Type: application/json
-Authorization: Bearer <token>
 
 {
   "type": "distance",
@@ -103,34 +102,19 @@ Authorization: Bearer <token>
 #### Get Metrics
 ```http
 GET /api/metrics?page=1&limit=10&type=distance&startDate=2024-01-01&endDate=2024-12-31&unit=m
-Authorization: Bearer <token>
 ```
 
 #### Get Chart Data
 ```http
-GET /api/metrics/chart?interval=daily&type=distance&startDate=2024-01-01&endDate=2024-12-31&unit=m
-Authorization: Bearer <token>
+GET /api/metrics/charts?interval=daily&type=distance&startDate=2024-01-01&endDate=2024-12-31&unit=m
 ```
 
 ### User Management
 
 #### Get Current User
 ```http
-GET /api/users/me
+GET /api/users/:id
 Authorization: Bearer <token>
-```
-
-#### Update User Profile
-```http
-PUT /api/users/me
-Authorization: Bearer <token>
-Content-Type: application/json
-
-{
-  "name": "John Doe",
-  "currentPassword": "oldpassword",
-  "newPassword": "newpassword"
-}
 ```
 
 #### Get All Users (Admin only)
