@@ -96,19 +96,19 @@ Authorization: Bearer <token>
 {
   "type": "distance",
   "value": 100,
-  "unit": "METER"
+  "unit": "m"
 }
 ```
 
 #### Get Metrics
 ```http
-GET /api/metrics?page=1&limit=10&type=distance&startDate=2024-01-01&endDate=2024-12-31&unit=METER
+GET /api/metrics?page=1&limit=10&type=distance&startDate=2024-01-01&endDate=2024-12-31&unit=m
 Authorization: Bearer <token>
 ```
 
 #### Get Chart Data
 ```http
-GET /api/metrics/chart?interval=daily&type=distance&startDate=2024-01-01&endDate=2024-12-31&unit=METER
+GET /api/metrics/chart?interval=daily&type=distance&startDate=2024-01-01&endDate=2024-12-31&unit=m
 Authorization: Bearer <token>
 ```
 
@@ -144,20 +144,20 @@ Authorization: Bearer <token>
 The API supports automatic unit conversion for both distance and temperature measurements:
 
 ### Distance Units
-- METER
-- CENTIMETER
-- INCH
-- FEET
-- YARD
+- METER: m
+- CENTIMETER: cm
+- INCH: in
+- FEET: ft
+- YARD: yd
 
 ### Temperature Units
-- CELSIUS
-- FAHRENHEIT
-- KELVIN
+- CELSIUS: C
+- FAHRENHEIT: F
+- KELVIN: K
 
 To convert units, simply specify the desired unit in the query parameter:
 ```http
-GET /api/metrics?unit=METER
+GET /api/metrics?unit=m
 ```
 
 ## Error Handling
